@@ -1,0 +1,137 @@
+Years,Country,CPI,GDP,Population,Region
+2015,Australia,1.5,0.69,"23,815,995",Oceania
+2015,Brazil,9.0,-4.36,"205,188,205",South America
+2015,China,1.4,6.42,"1,379,860,000",Asia
+2015,France,0.0,0.75,"66,548,272",Europe
+2015,Germany,0.5,0.62,"81,686,611",Europe
+2015,India,5.9,6.72,"1,322,866,505",Asia
+2015,Ireland,-0.3,23.2,"4,701,957",Europe
+2015,Italy,0.0,0.88,"60,730,582",Europe
+2015,Japan,0.8,1.67,"127,141,000",Asia
+2015,Russia,15.5,-2.18,"144,096,870",Europe
+2015,Saudi Arabia,1.2,2.69,"32,749,848",Middle East
+2015,Singapore,-0.5,1.76,"5,535,002",Asia
+2015,South Africa,4.5,-0.76,"55,876,504",Africa
+2015,Spain,-0.5,3.92,"46,444,832",Europe
+2015,Turkiye,7.7,4.04,"79,646,178",Europe
+2015,United Kingdom,0.4,1.58,"65,116,219",Europe
+2015,United States,0.1,1.95,"320,738,994",North America
+2016,Australia,1.3,1.14,"24,190,907",Oceania
+2016,Brazil,8.7,-4.06,"206,859,578",South America
+2016,China,2.0,6.24,"1,387,790,000",Asia
+2016,France,0.2,0.83,"66,724,104",Europe
+2016,Germany,0.5,1.41,"82,348,669",Europe
+2016,India,4.9,6.98,"1,338,636,340",Asia
+2016,Ireland,0.0,0.86,"4,755,335",Europe
+2016,Italy,-0.1,1.47,"60,627,498",Europe
+2016,Japan,-0.1,0.81,"127,076,000",Asia
+2016,Russia,7.0,0.01,"144,342,397",Europe
+2016,Saudi Arabia,2.1,0.32,"33,416,270",Middle East
+2016,Singapore,-0.5,2.27,"5,607,283",Asia
+2016,South Africa,6.6,-0.31,"56,422,274",Africa
+2016,Spain,-0.2,2.95,"46,484,062",Europe
+2016,Turkiye,7.8,1.57,"81,019,394",Europe
+2016,United Kingdom,1.0,1.39,"65,611,593",Europe
+2016,United States,1.3,0.93,"323,071,755",North America
+2017,Australia,1.9,0.6,"24,594,202",Oceania
+2017,Brazil,3.4,0.52,"208,504,960",South America
+2017,China,1.6,6.3,"1,396,215,000",Asia
+2017,France,1.0,1.99,"66,918,020",Europe
+2017,Germany,1.5,2.3,"82,657,002",Europe
+2017,India,2.5,5.57,"1,354,195,680",Asia
+2017,Ireland,0.3,7.83,"4,807,388",Europe
+2017,Italy,1.2,1.82,"60,536,709",Europe
+2017,Japan,0.5,1.76,"126,972,000",Asia
+2017,Russia,3.7,1.71,"144,496,739",Europe
+2017,Saudi Arabia,-0.8,-2.34,"34,193,122",Middle East
+2017,Singapore,0.6,4.45,"5,612,253",Asia
+2017,South Africa,5.2,0.77,"56,641,209",Africa
+2017,Spain,2.0,2.73,"46,593,236",Europe
+2017,Turkiye,11.1,6.1,"82,089,826",Europe
+2017,United Kingdom,2.6,1.75,"66,058,859",Europe
+2017,United States,2.1,1.6,"325,122,128",North America
+2018,Australia,1.9,1.35,"24,966,643",Oceania
+2018,Brazil,3.7,0.98,"210,166,592",South America
+2018,China,2.1,6.25,"1,402,760,000",Asia
+2018,France,1.9,1.5,"67,158,348",Europe
+2018,Germany,1.7,0.68,"82,905,782",Europe
+2018,India,4.9,5.3,"1,369,003,306",Asia
+2018,Ireland,0.5,7.19,"4,867,316",Europe
+2018,Italy,1.1,1.12,"60,421,760",Europe
+2018,Japan,1.0,0.77,"126,811,000",Asia
+2018,Russia,2.9,2.82,"144,477,859",Europe
+2018,Saudi Arabia,2.5,0.34,"35,018,133",Middle East
+2018,Singapore,0.4,3.09,"5,638,676",Asia
+2018,South Africa,4.5,0.29,"57,339,635",Africa
+2018,Spain,1.7,1.84,"46,797,754",Europe
+2018,Turkiye,16.3,2.09,"82,809,304",Europe
+2018,United Kingdom,2.3,1.09,"66,460,344",Europe
+2018,United States,2.4,2.4,"326,838,199",North America
+2019,Australia,1.6,0.67,"25,340,217",Oceania
+2019,Brazil,3.7,0.45,"211,782,878",South America
+2019,China,2.9,5.58,"1,407,745,000",Asia
+2019,France,1.1,1.5,"67,388,001",Europe
+2019,Germany,1.4,0.83,"83,092,962",Europe
+2019,India,7.7,2.81,"1,383,112,050",Asia
+2019,Ireland,0.9,4.01,"4,934,340",Europe
+2019,Italy,0.6,1.65,"59,729,081",Europe
+2019,Japan,0.5,-0.26,"126,633,000",Asia
+2019,Russia,4.5,2.24,"144,406,261",Europe
+2019,Saudi Arabia,-2.1,-1.45,"35,827,362",Middle East
+2019,Singapore,0.6,0.18,"5,703,569",Asia
+2019,South Africa,4.1,-0.99,"58,087,055",Africa
+2019,Spain,0.7,1.25,"47,134,837",Europe
+2019,Turkiye,15.2,-0.03,"83,481,684",Europe
+2019,United Kingdom,1.7,1.03,"66,836,327",Europe
+2019,United States,1.8,1.83,"328,329,953",North America
+2020,Australia,0.8,-1.28,"25,655,289",Oceania
+2020,Brazil,3.2,-3.92,"213,196,304",South America
+2020,China,2.5,2.0,"1,411,100,000",Asia
+2020,France,0.5,-8.03,"67,571,107",Europe
+2020,Germany,0.5,-3.78,"83,160,871",Europe
+2020,India,5.6,-6.73,"1,396,387,127",Asia
+2020,Ireland,-0.3,5.1,"4,985,382",Europe
+2020,Italy,-0.1,-8.53,"59,438,851",Europe
+2020,Japan,0.0,-4.0,"126,261,000",Asia
+2020,Russia,3.4,-2.45,"144,073,139",Europe
+2020,Saudi Arabia,3.4,-4.79,"35,997,107",Middle East
+2020,Singapore,-0.2,-3.6,"5,685,807",Asia
+2020,South Africa,3.2,-7.48,"58,801,927",Africa
+2020,Spain,-0.3,-11.76,"47,365,655",Europe
+2020,Turkiye,12.3,1.15,"84,135,428",Europe
+2020,United Kingdom,1.0,-11.36,"67,081,234",Europe
+2020,United States,1.2,-3.7,"331,511,512",North America
+2021,Australia,2.9,2.11,"25,688,079",Oceania
+2021,Brazil,8.3,4.44,"214,326,223",South America
+2021,China,0.9,8.35,"1,412,360,000",Asia
+2021,France,1.6,6.54,"67,749,632",Europe
+2021,Germany,3.1,2.58,"83,196,078",Europe
+2021,India,4.9,8.18,"1,407,563,842",Asia
+2021,Ireland,2.4,12.51,"5,033,165",Europe
+2021,Italy,1.9,7.58,"59,109,668",Europe
+2021,Japan,-0.2,2.61,"125,681,593",Asia
+2021,Russia,6.7,6.05,"143,449,286",Europe
+2021,Saudi Arabia,3.1,4.06,"35,950,396",Middle East
+2021,Singapore,2.3,13.52,"5,453,566",Asia
+2021,South Africa,4.6,3.87,"59,392,255",Africa
+2021,Spain,3.1,5.41,"47,415,750",Europe
+2021,Turkiye,19.6,10.51,"84,775,404",Europe
+2021,United Kingdom,2.5,7.69,"67,026,300",Europe
+2021,United States,4.7,5.78,"332,031,554",North America
+2022,Australia,6.6,2.46,"25,978,935",Oceania
+2022,Brazil,9.3,2.43,"215,313,498",South America
+2022,China,2.0,3.0,"1,412,175,000",Asia
+2022,France,5.2,2.28,"67,935,660",Europe
+2022,Germany,6.9,0.72,"84,079,811",Europe
+2022,India,5.9,6.28,"1,417,173,173",Asia
+2022,Ireland,7.8,10.78,"5,086,988",Europe
+2022,Italy,8.2,4.12,"58,856,847",Europe
+2022,Japan,2.5,1.48,"125,124,989",Asia
+2022,Russia,11.6,-2.16,"143,555,736",Europe
+2022,Saudi Arabia,2.5,7.37,"36,408,820",Middle East
+2022,Singapore,6.1,0.27,"5,637,022",Asia
+2022,South Africa,7.0,1.19,"59,893,885",Africa
+2022,Spain,8.4,5.01,"47,615,034",Europe
+2022,Turkiye,72.3,4.87,"85,341,241",Europe
+2022,United Kingdom,7.9,4.19,"66,971,411",Europe
+2022,United States,8.0,1.68,"333,287,557",North America

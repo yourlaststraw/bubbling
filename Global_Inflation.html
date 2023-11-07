@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+    <title>World Inflation Bubble Chart</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <style>
+        .button-play {
+        background: #192c49;
+        border-radius: 999px;
+        box-shadow: #192c49 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        opacity: 1;
+        outline: 0 solid transparent;
+        padding: 8px 18px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: fit-content;
+        word-break: break-word;
+        border: 0;
+        margin-inline: 10px;
+        }
+        .button-play:hover {
+        background-color: #2c4c7d;
+        }
+        .button-resume {
+        background-color: #FFFFFF;
+        border: 0;
+        border-radius: 999px;
+        box-shadow: #192c49 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #192c49;
+        cursor: pointer;
+        font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        opacity: 1;
+        outline: 0 solid transparent;
+        padding: 8px 18px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: fit-content;
+        word-break: break-word;
+        }
+        .button-resume:hover {
+        background-color: #d6e4f8;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div id="slider-range"></div>
+    <button class="button-play" id="pause-button" role="button">Pause</button>
+    <button class="button-resume" id="resume-button">Resume</button>
+    <script type="module">
+
+        function drawChart(container, data) {
+            let years = Array.from(new Set(data.map(d => d.Years)));
+
+            const width = 640;
+            const height = 500;
+            const margin = {
+                top: 30,
+                right: 30,
+                bottom: 30,
+                left: 30,
+            };
+
+            const x = d3.scaleLinear()
+                .domain([-10, d3.max(data, d => d.GDP)])
+                .range([margin.left, width - margin.right])
+                .nice();
+
+            const y = d3.scaleLinear()
+                .domain([-4, d3.max(data, d => d.CPI)])
+                .range([height - margin.bottom, margin.top])
+                .nice();
+
+            const regionColorScale = d3.scaleOrdinal()
+                .domain(data.map(d => d.Region)) 
+                .range(d3.schemeCategory10);
+
+            const size = d3.scaleSqrt()
+                .domain(d3.extent(data, d => parseInt(d.Population.replace(/,/g, ''))))
+                .range([4, 35]);
+
+
+            const svg = d3.select(container).append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            svg.append('g')
+                .attr('transform', `translate(0, ${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .append('text')
+                .attr('text-anchor', 'end')
+                .attr('fill', 'black')
+                .attr('font-size', '12px')
+                .attr('font-weight', 'bold')
+                .attr('x', width - margin.right)
+                .attr('y', -10)
+                .text('GDP');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left}, 0)`)
+                .call(d3.axisLeft(y))
+                .append('text')
+                .attr('transform', `translate(20, ${margin.top}) rotate(-90)`)
+                .attr('text-anchor', 'end')
+                .attr('fill', 'black')
+                .attr('font-size', '12px')
+                .attr('font-weight', 'bold')
+                .text('CPI');
+
+            const yearLabel = svg.append('text')
+                .attr('class', 'year')
+                .attr('x', 40)
+                .attr('y', height - margin.bottom - 20)
+                .attr('fill', '#ccc')
+                .attr('font-family', 'Helvetica Neue, Arial')
+                .attr('font-weight', 500)
+                .attr('font-size', 80)
+                .text(d3.format('d')(years[0]));
+            
+            const gRange = d3
+                .select('#slider-range')
+                .append('svg')
+                .attr('width', 500)
+                .attr('height', 100)
+                .append('g')
+                .attr('transform', 'translate(90,30)');
+
+            const sliderRange = d3
+                .sliderBottom()
+                .min(d3.min(years))
+                .max(d3.max(years))
+                .width(300)
+                .step(1)
+                .tickFormat(d3.format('d'))
+                .ticks(years.length)
+                .fill('#85bb65')
+                .on('onchange', val => {
+                    let filteredData = data.filter(d => d.Years === val);
+
+                    svg.selectAll('circle').remove();
+
+                    svg.selectAll('circle').data(filteredData)
+                        .enter()
+                        .append('circle')
+                        .sort((a, b) => b.pop - a.pop)
+                        .attr('opacity', 0.75)
+                        .attr('fill', d => regionColorScale(d.Region))
+                        .attr('cx', d => x(d.GDP))
+                        .attr('cy', d => y(d.CPI))
+                        .attr('r', d => size(parseInt(d.Population.replace(/,/g, ''))))
+                        .append('title')
+                        .text(d => d.Country + '\nCPI: ' + d.CPI + '%');
+                        
+
+                    svg.select('.year').text(d3.format('d')(val));
+
+                    
+                });
+
+            gRange.call(sliderRange);
+
+            let index = 0;
+            let interval;
+
+            const updateSlider = () => {
+                const year = years[index];
+                sliderRange.value(year);
+                sliderRange.on('onchange')(year);
+                index = (index + 1) % years.length;
+            };
+
+            const startSlider = () => {
+                interval = setInterval(updateSlider, 2000);
+            };
+
+            const pauseSlider = () => {
+                clearInterval(interval);
+            };
+
+            startSlider(); 
+
+            d3.select('#pause-button').on('click', pauseSlider);
+            d3.select('#resume-button').on('click', startSlider);
+        }
+
+        (async () => {
+            const data = await d3.csv("BubbleChart_data_new.csv");
+            data.forEach(d => {
+                d.Population = d.Population.replace(/,/g, '');
+                d.Years = +d.Years;
+            });
+            drawChart('.container', data);
+        })();
+    </script>
+</body>
+
+</html>
