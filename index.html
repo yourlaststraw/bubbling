@@ -80,7 +80,7 @@
             };
 
             const x = d3.scaleLinear()
-                .domain([-10, d3.max(data, d => d.GDP)])
+                .domain([-10, 15])
                 .range([margin.left, width - margin.right])
                 .nice();
 
@@ -110,7 +110,7 @@
                 .attr('fill', 'black')
                 .attr('font-size', '12px')
                 .attr('font-weight', 'bold')
-                .attr('x', 15)
+                .attr('x', width - margin.right)
                 .attr('y', -10)
                 .text('GDP');
 
