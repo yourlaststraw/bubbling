@@ -56,6 +56,25 @@
         .button-resume:hover {
         background-color: #d6e4f8;
         }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .legend-label {
+            font-size: 14px;
+        }
 
     </style>
 </head>
@@ -65,6 +84,7 @@
     <div id="slider-range"></div>
     <button class="button-play" id="pause-button" role="button">Pause</button>
     <button class="button-resume" id="resume-button">Resume</button>
+    <div class="legend"></div>
     <script type="module">
 
         function drawChart(container, data) {
@@ -199,6 +219,23 @@
 
             d3.select('#pause-button').on('click', pauseSlider);
             d3.select('#resume-button').on('click', startSlider);
+
+            // Add legend
+            const legendData = Array.from(new Set(data.map(d => d.Region)));
+            const legend = d3.select('.legend')
+                .selectAll('.legend-item')
+                .data(legendData)
+                .enter()
+                .append('div')
+                .attr('class', 'legend-item');
+
+            legend.append('div')
+                .attr('class', 'legend-color')
+                .style('background-color', d => regionColorScale(d));
+
+            legend.append('div')
+                .attr('class', 'legend-label')
+                .text(d => d);
         }
 
         (async () => {
