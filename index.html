@@ -187,7 +187,7 @@
                         .attr('cy', d => y(d.CPI))
                         .attr('r', d => size(parseInt(d.Population.replace(/,/g, ''))))
                         .append('title')
-                        .text(d => d.Country + '\nCPI: ' + d.CPI + '%');
+                        .text(d => d.Country + '\nCPI: ' + d.CPI + '%'  + '\nGDP: ' + d.GDP + '%');
                         
 
                     svg.select('.year').text(d3.format('d')(val));
